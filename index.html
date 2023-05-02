@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- include bootstap dependencies -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  	<script src="script.js"></script>
+
+    <!-- Include handlebars library -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+
+    <!-- Script for our application  -->
+  <!--	<link rel="stylesheet" href="spa_app.css">   -->
+    <script src=" "> </script>
+
+  </head>
+  <body>
+
+
+
+  	<!-- NAVBAR -->
+				  	<div style="font-size: 20px">
+					    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+						  <div class="container-fluid">
+						    <div class="navbar-header">
+						      <a class="navbar-brand" style="font-size: 25px"><b>2022 FIFA World Cup Shorts</b></a>
+						    </div>
+						    <ul class="nav navbar-nav" id="home">
+						      <li class="active" ><a href="#">Home</a></li>
+						    </ul>
+
+
+						    <ul class="nav navbar-nav navbar-right" id="logintxt">
+				<!--
+						      <li onclick="render_view('#register_screen')"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						      <li onclick="render_view('#login_screen')"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				-->
+						    </ul>
+
+
+						  </div>
+						</nav>
+					</div>
+<!-- END OF NAVBAR -->
+
+    <div class="container-fluid text-center">    
+	  <div class="row content">
+	    <div class="col-sm-2 sidenav">
+	     <!-- left margin> -->
+	    </div>
+
+	    <div id="view_widget">
+
+	     </div>
+
+
+<!-- INTRO VIEW -->
+	      <script id="intro_view" type="text/x-handlebars-template">
+		    <div class="col-sm-8 text-left"> 
+		      <div class="row">
+
+		      	<!-- VIDEO ELEMENT -->
+			    <div class="col-sm-4">
+			      <div class="panel panel-primary">
+			        <div class="panel-heading">VIDEO</div>
+			        <div class="panel-body"><img src="https://placehold.it/150x80?text=VIDEO" class="img-responsive" style="width:100%" alt="Image"></div>
+			        <div class="panel-footer">CAPTION</div>
+			      </div>
+			    </div>
+			    <!-- END VIDEO -->
+
+
+
+		      </div>
+		    </div>
+		 </script>
+		 <!-- 
+			document.getElementById("logintxt").innerHTML = "<li onclick="render_view('#register_screen')"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		    <li onclick="render_view('#login_screen')"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>";
+		 -->
+
+<!-- LOGIN SCREEN -->
+		<script id="login_screen" type="text/x-handlebars-template">
+			<div class="col-sm-8 text-left"> 
+		      <div class="row" style="margin-bottom: 150px"> <p></p></div>
+		      <div class="row content">
+		      	<h2>Enter your Email and Password to sign in.</h2>
+				  <form>
+				    <div class="form-group">
+				      <label for="email">Email:</label>
+				      <input type="email" class="form-control" id="lemail" placeholder="Enter email" name="email">
+				    </div>
+				    <div class="form-group">
+				      <label for="pwd">Password:</label>
+				      <input type="password" class="form-control" id="lpwd" placeholder="Enter password" name="pwd">
+				    </div>
+				    	<button type="submit" class="btn btn-primary btn-lg" onclick="login()">Submit</button>
+				  </form>
+		      </div>
+		    </div>
+	    </script>
+
+		<!--    document.getElementById("logintxt").innerHTML = "";   -->
+
+
+<!-- REGISTER SCREEN -->
+		<script id="register_screen" type="text/x-handlebars-template">
+			<div class="col-sm-8 text-left"> 
+			      <div class="row" style="margin-bottom: 150px"> <p></p></div>
+			      <div class="row content">
+			      	<h2>Enter your Email and create a password to make an account.</h2>
+					  <form>
+					    <div class="form-group">
+					      <label for="remail">Email:</label>
+					      <input type="email" class="form-control" id="remail" placeholder="Enter email" name="email">
+					    </div>
+					    <div class="form-group">
+					      <label for="rpwd">Password:</label>
+					      <input type="password" class="form-control" id="rpwd" placeholder="Enter password" name="pwd">
+					    </div>
+					    	<button type="submit" class="btn btn-primary btn-lg" id="regbtn" onclick="register()">Submit</button>
+					  </form>
+			      </div>
+			    </div>
+		</script>
+
+		<!--    document.getElementById("logintxt").innerHTML = "";   -->
+
+
+<!-- LOGGED IN VIEW> -->
+
+		<script id="loggedin_view" type="text/x-handlebars-template">
+			<div class="col-sm-8 text-left"> 
+			      <div class="row">
+
+			      	<!-- VIDEO ELEMENT -->
+				    <div class="col-sm-4">
+				      <div class="panel panel-success">
+				        <div class="panel-heading">VIDEO</div>
+				        <div class="panel-body"><img src="https://placehold.it/150x80?text=VIDEO" class="img-responsive" style="width:100%" alt="Image"></div>
+				        <div class="panel-footer">CAPTION</div>
+				      </div>
+				    </div>
+				    <!-- END VIDEO -->
+
+
+
+			      </div>
+			    </div>
+
+		</script>
+		<!-- 
+				document.getElementById("logintxt").innerHTML = "
+					<li><a href="#"><span class="glyphicon glyphicon-facetime-video"></span> Upload Video</a></li>
+			    	<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+			";   
+		-->
+
+<!-- UPLOAD VIDEO SCREEN -->
+
+		<script id="upload_screen" type="text/x-handlebars-template">
+			<div class="col-sm-8 text-left"> 
+			      <div class="row" style="margin-bottom: 150px"> <p></p></div>
+			      <div class="row content">
+			      	<h2>Enter the link of the video to upload.</h2>
+					  <form class="form-horizontal">
+					  	<div class="form-group">
+						      <label for="title">Video Title:</label>
+						      <input type="title" class="form-control" id="title" placeholder="Enter title" name="title">
+						    </div>
+							  <div class="form-group">
+						    <label class="control-label col-sm-2" for="link">www.youtube.com/shorts/</label>
+						    <div class="col-sm-10">
+						      <input type="link" class="form-control" id="link" placeholder="jdLtXYJ9b7k">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <div class="col-sm-offset-2 col-sm-10">
+						      <button type="submit" class="btn btn-primary btn-lg" onclick="upload()">Submit</button>
+						    </div>
+						  </div>
+						</form>
+			      </div>
+			    </div>
+		</script>
+		<!-- 
+				document.getElementById("logintxt").innerHTML = "
+			    	<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+			";   
+		-->
+
+
+	    <div class="col-sm-2 sidenav">
+	      
+	    </div>
+	  </div>
+	</div>
+
+	<footer class="container-fluid text-center">
+		
+	</footer>
+
+  	</body>
+ </html>
