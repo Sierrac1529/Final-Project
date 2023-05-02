@@ -1,0 +1,50 @@
+doctype html
+html(xmlns="http://www.w3.org/1999/xhtml")
+	head
+		block css
+			link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
+		block script
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js")
+		
+		script(src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js")
+		
+
+			
+
+	body
+		div(style="font-size: 20px")
+			nav.navbar.navbar-light(style="background-color: #e3f2fd;")
+				div.container-fluid
+					div.navbar-header
+						a.navbar-brand(style="font-size: 25px") 
+							b 
+								FIFA World Cup Shorts
+					ul.nav.navbar-nav#home
+						li.active(onclick="update_view('#intro_view')")
+							a(href="/home") Home
+					ul.nav.navbar-nav.navbar-right#logintxt
+						li(onclick="update_view('#login_screen')")#login
+							a(href="/login") Login
+								span.glyphicon.glyphicon-log-in 
+							
+								
+								
+		div.container-fluid.text-center
+			div.row.content
+				div.col-sm-2.sidenav
+					// left margin>
+				div.col-sm-8.text-left
+					div.row(style="margin-bottom: 150px") 
+						p
+					div.row.content
+						h2 Enter your Email and create a password to make an account.
+						form
+							div.form-group
+								label(for="remail") Email:
+								input(type="email", class="form-control", id="remail", placeholder="Enter email", name="email")
+							div.form-group
+								label(for="rpwd") Password:
+								input(type="password", class="form-control", id="rpwd", placeholder="Enter password", name="pwd")
+							button.btn.btn-primary.btn-lg#regbtn(type="submit", onclick="register()") Submit
+		footer.container-fluid.text-center
