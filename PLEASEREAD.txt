@@ -1,1 +1,12 @@
-i am still working on this. I am trying to connect the database file and organize everythihng correctly in modules and routes.
+i am still working on this. I can't figure out how to update the pug file to include the videos that are in the database, but everything else works if the files are locally stored and refered to as such.
+
+for example, in the routes.js file,  instead of 
+
+			dir = "github.com/Sierrac1529/Final-Project"
+
+having it as 
+
+			dir = "C:/Users/clarkes/Desktop/Project"
+
+i was able to successfully execute the other functions of the website such as the login, register, ect.
+
