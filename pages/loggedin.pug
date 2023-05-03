@@ -19,28 +19,31 @@ html(xmlns="http://www.w3.org/1999/xhtml")
 							b 
 								FIFA World Cup Shorts
 					ul.nav.navbar-nav#home
-						li.active(onclick="update_view('#intro_view')")
+						li.active
 							a(href="/home*") Home
 					ul.nav.navbar-nav.navbar-right#logintxt              
-						li(onclick="update_view('#upload_screen')")#upload
+						li#upload
 							a(href="/upload") Upload Video 
 								span.glyphicon.glyphicon-facetime-video
-						li(onclick="update_view('#intro_view')")#logout
+						li#logout
 							a(href="/home") Log Out 
 								span.glyphicon.glyphicon-log-out
 
 		div.container-fluid.text-center    
 			div.row.content
-				div.col-sm-2.sidenav
+				div.col-sm-2.sidenav(style="margin-right: 15%")
 
 				div.col-sm-8.text-left
-					div.row
-						div.col-sm-4
-							div.panel.panel-success
-								div.panel-heading VIDEO
-								div.panel-body
-									img(src="https://placehold.it/150x80?text=VIDEO", class="img-responsive", style="width:100%", alt="Image")
-								div.panel-footer CAPTION
+					div.row#database
+						each item in database
+							div.col-sm-4
+							  div.panel.panel-primary
+							    div.panel-heading= item.Title 
+							    div.panel-body
+							    - const videoID = item.Link
+							    -const baseUrl = 'https://www.youtube.com/embed/'
+							      iframe(width="451" height="801" src=baseUrl + videoId frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
+						
 
-				div.col-sm-2.sidenav
+				div.col-sm-2.sidenav(style="margin-left: 15%")
 		footer.container-fluid.text-center
