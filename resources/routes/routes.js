@@ -1,7 +1,7 @@
 //routes.js
 
 //create variables & references
-var dir = "C:/Users/clarkes/Desktop/Project"
+var dir = "https://github.com/Sierrac1529/Final-Project"
 var express = require("express");
 var app = express();
 const router = express.Router();
