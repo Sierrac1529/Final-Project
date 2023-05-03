@@ -1,4 +1,4 @@
-i am still working on this. I can't figure out how to update the pug file to include the videos that are in the database, but everything else works if the files are locally stored and refered to as such.
+i am still working on this as i am still figuring out how to upload to glitch. everything else works if the files are locally stored and refered to as such and node is ran with server.js.
 
 for example, in the routes.js file,  instead of 
 
