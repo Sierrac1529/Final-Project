@@ -33,17 +33,19 @@ html(xmlns="http://www.w3.org/1999/xhtml")
 			div.row.content
 				div.col-sm-2.sidenav(style="margin-right: 15%")
 
-				div.col-sm-8.text-left
+				div.col-sm-8.text-middle
 					div.row#database
 						each item in database
 							div.col-sm-4
-							  div.panel.panel-primary
-							    div.panel-heading= item.Title 
-							    div.panel-body
-							    - const videoID = item.Link
-							    -const baseUrl = 'https://www.youtube.com/embed/'
-							      iframe(width="451" height="801" src=baseUrl + videoId frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
-						
+								div.panel.panel-primary
+								div.panel-heading= item.Title 
+								div.panel-body
+									- const videoID = item.Link;
+									- const baseUrl = 'https://www.youtube.com/embed/';
+									- const watch = baseUrl + videoID;
+									iframe(width="329" height="586" src=(watch) title=item.Title allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
+								
+							
 
 				div.col-sm-2.sidenav(style="margin-left: 15%")
 		footer.container-fluid.text-center

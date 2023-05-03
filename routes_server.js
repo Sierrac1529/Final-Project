@@ -153,7 +153,9 @@ app.get('/home*', (req, res) => {
 
   const fs = require('fs');
   const data = fs.readFileSync(vid_conn);
-  const database = JSON.parse(data);
+  const base = JSON.parse(data);
+  const database = base.results;
+ 
 
   model_view = {
     action_url: '/home*',
