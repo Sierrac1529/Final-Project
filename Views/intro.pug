@@ -19,29 +19,25 @@ html(xmlns="http://www.w3.org/1999/xhtml")
               b 
                 FIFA World Cup Shorts
           ul.nav.navbar-nav#home
-            li.active(onclick="update_view('#intro_view')")
+            li.active
               a(href="/home") Home
           ul.nav.navbar-nav.navbar-right#logintxt
-            li(onclick="update_view('#register_screen')")#signup
+            li#signup
               a(href="/register") Sign Up
                 span.glyphicon.glyphicon-user 
-            li(onclick="update_view('#login_screen')")#login
+            li#login
               a(href="/login") Login
                 span.glyphicon.glyphicon-log-in 
 
-    div.container-fluid.text-center    
+    div.container-fluid.text-center(style="background-color: #ebebeb;")    
       div.row.content
         div.col-sm-2.sidenav
 
         div.col-sm-8.text-left
-          div.row
-            div.col-sm-4
-              div.panel.panel-primary
-                div.panel-heading VIDEO
-                div.panel-body
-                  img(src="https://placehold.it/150x80?text=VIDEO", class="img-responsive", style="width:100%", alt="Image")
-                div.panel-footer CAPTION
-
+          div.row(style="margin-bottom: 5%; text-align: center;")#image
+            img(src="https://www.redmention.com/storage/2022/11/YouTube-Looks-to-Promote-Shorts-via-World-Cup-Activations.png")
+          div.row(style="text-align: center; margin-bottom: 20%")
+            h1 Please sign in to view the videos!
         div.col-sm-2.sidenav
     footer.container-fluid.text-center
 

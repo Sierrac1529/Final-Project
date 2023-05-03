@@ -6,7 +6,6 @@ html(xmlns="http://www.w3.org/1999/xhtml")
     block script
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js")
-    script(src= "http://localhost:3000/pages/pagescripts/viewchanger.js")
     script(src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js")
     
 
@@ -22,7 +21,7 @@ html(xmlns="http://www.w3.org/1999/xhtml")
             li.active
               a(href="/home") Home
           ul.nav.navbar-nav.navbar-right#logintxt
-            li(onclick="update_view('#register_screen')")#signup
+            li#signup
               a(href="/register") Sign Up
                 span.glyphicon.glyphicon-user           
 
@@ -35,10 +34,10 @@ html(xmlns="http://www.w3.org/1999/xhtml")
             div.row(style="margin-bottom: 150px")
               p
             div.row.content
-              h2 Enter your Email and Password to sign in.
+              h2 Enter your Username and Password to sign in.
               form(role='form' method='POST' action=action_url)
                 div.form-group
-                  label(for='username') username:
+                  label(for='username') Username:
                   input#username.form-control(type='text', placeholder='johnsmith01' name='username')
                 div.form-group
                   label(for='password') Password:

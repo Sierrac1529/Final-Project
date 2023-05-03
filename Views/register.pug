@@ -21,10 +21,10 @@ html(xmlns="http://www.w3.org/1999/xhtml")
 							b 
 								FIFA World Cup Shorts
 					ul.nav.navbar-nav#home
-						li.active(onclick="update_view('#intro_view')")
+						li.active
 							a(href="/home") Home
 					ul.nav.navbar-nav.navbar-right#logintxt
-						li(onclick="update_view('#login_screen')")#login
+						li#login
 							a(href="/login") Login
 								span.glyphicon.glyphicon-log-in 
 							
@@ -38,13 +38,13 @@ html(xmlns="http://www.w3.org/1999/xhtml")
 					div.row(style="margin-bottom: 150px") 
 						p
 					div.row.content
-						h2 Enter your Email and create a password to make an account.
-						form
+						h2 Enter your username and create a password to make an account.
+						form(role='form' method='POST' action=action_url)
 							div.form-group
-								label(for="remail") Email:
-								input(type="email", class="form-control", id="remail", placeholder="Enter email", name="email")
+								label(for="rusername") username:
+								input(type="username", class="form-control", id="rusername", placeholder="Enter username", name="username")
 							div.form-group
-								label(for="rpwd") Password:
-								input(type="password", class="form-control", id="rpwd", placeholder="Enter password", name="pwd")
-							button.btn.btn-primary.btn-lg#regbtn(type="submit", onclick="register()") Submit
+								label(for="rpassword") Password:
+								input(type="password", class="form-control", id="rpassword", placeholder="Enter password", name="password")
+							button.btn.btn-primary.btn-lg#regbtn(type="submit") Submit
 		footer.container-fluid.text-center

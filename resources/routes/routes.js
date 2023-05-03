@@ -103,4 +103,22 @@ router.get('/users', (req,res) => {
   res.json(users);
  });
 
+
+//intro.pug
+app.get('/home', (req,res)=>{
+  model_view = {
+    action_url : '/home',
+  }
+  req.session.destroy((err) => {
+    if (err){
+        console.log(err);
+        res.send(err)
+     }
+    else{res.render('intro.pug',);}
+  });
+  
+})
+
+
+
 module.exports = router;

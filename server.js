@@ -7,7 +7,7 @@ path = require('path');
 //var v_script = require(dir+'/resources/vids.js');
 
 //user database
-user_conn =  "C:/Users/clarkes/Desktop/Project/resources/demodb.json";
+user_conn =  dir+ "/resources/demodb.json";
 
 user_schema = {
   results : []
@@ -18,7 +18,7 @@ global.u_db = require(dir+"/resources/fsdb")(user_conn,user_schema);
 
 
 //videos database
-vid_conn="C:/Users/clarkes/Desktop/Project/resources/videodb.json";
+vid_conn=dir+"/resources/videodb.json";
 
 vid_schema = {
 	results : []
@@ -34,13 +34,14 @@ var r = require(dir+'/resources/routes/routes');
 const session = require('express-session');
 
 
+
 // Define an applicatiosn.
 var app = express()
 
 
 // Specify what template engine to use.  PUG in our case
-// PUG templates shoudl be stored in the subfolder called 'pages' in this exmaple.
-app.set('views','./pages');
+// PUG templates shoudl be stored in the subfolder called 'Views' in this exmaple.
+app.set('views','./Views');
 app.set('view engine','pug');
 
 
@@ -58,8 +59,8 @@ app.use(session({
 )
 
 
-app.get('/pages/pagescripts/viewchanger.js', (req,res)=>{
-	res.sendFile(path.join(dir + "/pages/page scripts/viewchanger.js"));
+app.get('/Views/Viewscripts/viewchanger.js', (req,res)=>{
+	res.sendFile(path.join(dir + "/Views/page scripts/viewchanger.js"));
 
 })
 //
