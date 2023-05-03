@@ -1,6 +1,6 @@
 //routes server
 
-var dir = "C:/Users/clarkes/Desktop/Project"
+var dir = "https://github.com/Sierrac1529/Final-Project"
 var express = require('express');
 path = require('path');
 
